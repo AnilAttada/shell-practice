@@ -1,8 +1,8 @@
 #!/bin/bash
 
-Person1=$Person1
-Person2=$Person2
+Person1=Modi
+Person2=Musk
 
-Person1:: Hi Person2, Hoe are you?
-Person2:: Hi, Iam good, Wha about you?
+Person1:: Hi Musk,are you?
+Person2:: Hi, Iam good, What about you?
 
