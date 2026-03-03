@@ -1,8 +1,7 @@
 #!/bin/bash
 
 
-echo "Enter your pin::"
-read -s PIN 
-echo "your number is $PIN"
+Modi ::Hi Muskk, How are you?
+Musk ::Hi, Iam fine, What about you?
 
 
