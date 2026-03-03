@@ -1,8 +1,8 @@
 #!/bin/bash
 
 TIMESTAMP=$(date)
-Number1=100
-Number2=400
+Number1=$1
+Number2=$2
 
 SUM=$(($Number1+$Number2))
 
