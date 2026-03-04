@@ -14,7 +14,7 @@ VALIDATE(){
 then
     echo "$2 is installed....SUCCESS"
 else   
-    echo " $2 is not installed.....FAILURE"
+    echo "$2 is not installed.....FAILURE"
 fi
 
 }
@@ -24,7 +24,7 @@ if [ $? -ne 0 ]
 then
     echo "httpd is not installed......going to install"
 dnf install httpd -y
-VALIDATE $? "httpd
+VALIDATE $? "httpd"
 else
-    echo " httpd is installed...already present"
+    echo "httpd is installed...already present"
 fi
