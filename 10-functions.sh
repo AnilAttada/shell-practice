@@ -2,27 +2,27 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then 
     echo "run with root access"
 else 
     echo "running with root access"
 fi
 
-dnf list installed mysql
+dnf list installed httpd
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then
-    echo "Mysql is not installed......going to install"
-dnf install mysql -y
+    echo "httpd is not installed......going to install"
+dnf install httpd -y
 
 if [ $? -eq 0 ]
 then
-    echo "Mysql is installed....SUCCESS"
+    echo "httpd is installed....SUCCESS"
 else   
-    echo " Mysql is not installed.....FAILURE"
+    echo " httpd is not installed.....FAILURE"
 fi
 
 else
-    echo " Mysql is installed...already present"
+    echo " httpd is installed...already present"
 fi
