@@ -12,7 +12,7 @@ then
     echo -e "$R ERROR :: run with root access $N"
     exit 1
 else 
-    echo "$G running with root access $N"
+    echo -e "$G running with root access $N"
 fi
 
 VALIDATE(){
