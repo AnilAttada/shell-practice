@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "PID of script-1: $$"
+echo "PID of script-2: $$"
 
 echo "$GREETINGS"
