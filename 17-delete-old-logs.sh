@@ -1,3 +1,7 @@
 #!/bin/bash
 
-find . -name "*.log" -mtime +14
+set -e
+
+echo "Hi, Good Morning"
+echoooo "Hi, Hiw are youu?"
+echo " this is fine"

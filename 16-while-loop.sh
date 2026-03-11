@@ -1,13 +1,13 @@
-#!/bin/bash
+# #!/bin/bash
 
-a=0
-while [ $a -lt 10 ]
-do
-    echo $a
-    a=`expr $a + 1`
-done
-
-# while IFS= read -r line
+# a=0
+# while [ $a -lt 10 ]
 # do
-#     echo $line
-# done < 17-delte-old-logs.sh
+#     echo $a
+#     a=`expr $a + 1`
+# done
+
+while IFS= read -r line
+do
+    echo $line
+done < 17-delte-old-logs.sh
