@@ -1,7 +1,40 @@
 #!/bin/bash
 
-set -e
+USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+LOGS_FOLDER="/var/log/shellscript-logs"
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+SOURCE_DIR=/home/ec2-user/app-logs
 
-echo "Hi, Good Morning"
-echoooo "Hi, Hiw are youu?"
-echo " this is fine"
+mkdir -p $LOGS_FOLDER
+
+if [ $USERID -ne 0 ]
+then 
+    echo -e "$R ERROR :: run with root access $N" | tee -a $LOG_FILE
+    exit 1
+else 
+    echo -e "$G running with root access $N" | tee -a $LOG_FILE
+fi
+
+VALIDATE(){
+    if [ $1 -eq 0 ]
+    then
+        echo -e "$2 is installed....$G SUCCESS $N" | tee -a $LOG_FILE
+    else    
+        echo -e "$2 is not installed..... $R FAILURE $N" | tee -a $LOG_FILE
+    fi
+
+}
+
+echo "Script started executing at: $(date)"  | tee -a $LOG_FILE
+
+FILES_TO_DEL=$( find $SOURCE_DIR -name "*.log" -mtime +14)
+while IFS= read -r filepath
+do
+    echo "Deleting file: $filepath" | tee -a $LOG_FILE
+    rm -rf $filepath
+done <<<$FILES_TO_DEL
