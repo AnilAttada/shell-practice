@@ -42,26 +42,26 @@ then
     USAGE
 fi
 
-if [ ! -d $SOURCE_DIR ]
+if [ ! -d $SOURCE_DIR ] #to check dest dir present or not
 then
     echo -e " $R source-dir $SOURCE_DIR is not present $N "
     exit 1
 fi
-if [ ! -d $DEST_DIR ]
+if [ ! -d $DEST_DIR ] #to check dest dir present or not
 then
     echo -e " $R dest-dir $DEST_DIR is not present $N "
 fi
 
 FILES=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
 
-if [ ! -z $FILES ]
+if [ ! -z $FILES ] #to check zip files are not present 
 then
     echo "files to zip are: $FILES"
     TIME_STAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE="$DEST_DIR/app-logs-$TIME_STAMP.zip"
-    echo $FILES | zip -@ $ZIP_FILE
+    echo $FILES | zip -@ $ZIP_FILE #this is used to zip the files in dest-dir
 
-    if [ -f $ZIP_FILE ]
+    if [ -f $ZIP_FILE ] #check files are present or not
     then
         echo -e "Successfully created zip file"
 
