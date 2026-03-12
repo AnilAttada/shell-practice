@@ -41,3 +41,13 @@ if [ $# -lt 2 ]
 then
     USAGE
 fi
+
+if [ ! -d $SOURCE_DIR ]
+then
+    echo -e " $R source-dir $SOURCE_DIR is not present $N "
+    exit 1
+fi
+if [ ! -d $DEST_DIR ]
+then
+    echo -e " $R dest-dir $DEST_DIR is not present $N "
+fi
