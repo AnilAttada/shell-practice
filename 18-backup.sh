@@ -51,3 +51,12 @@ if [ ! -d $DEST_DIR ]
 then
     echo -e " $R dest-dir $DEST_DIR is not present $N "
 fi
+
+FILES=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
+
+if [ ! -z $FILES ]
+then
+    echo "files to zip are: $FILES"
+else
+    echo -e "No files found to zip older than 14 days...$Y SKIPPING $N"
+fi
