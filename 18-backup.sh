@@ -3,7 +3,7 @@
 USERID=$(id -u)
 SOURCE_DIR=$1
 DEST_DIR=$2
-DATE=${3:-14}
+DAYS=${3:-14}
 
 R="\e[31m"
 G="\e[32m"
