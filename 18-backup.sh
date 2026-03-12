@@ -59,7 +59,7 @@ then
     echo "files to zip are: $FILES"
     TIME_STAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE="$DEST_DIR/app-logs-$TIME_STAMP.zip"
-    echo $FILES | zip -@ $ZIP_FILE #this is used to zip the files in dest-dir
+    echo $FILES | zip -@ $ZIP_FILE #this is used to create zip the files in dest-dir
 
     if [ -f $ZIP_FILE ] #check files are present or not
     then
