@@ -55,7 +55,7 @@ fi
 
 FILES=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
 
-if [ ! -z $FILES ] #to check zip files are not present 
+if [ ! -n $FILES ] #to check zip files are not present 
 then
     echo "files to zip are: $FILES"
     TIME_STAMP=$(date +%F-%H-%M-%S)
