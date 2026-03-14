@@ -51,6 +51,7 @@ fi
 if [ ! -d $DEST_DIR ] #to check dest dir present or not
 then
     echo -e " $R dest-dir $DEST_DIR is not present $N "
+    exit 1
 fi
 
 FILES=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
@@ -58,8 +59,11 @@ FILES=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
 if [ ! -z "$FILES" ] #to check zip files are not present 
 then
     echo "files to zip are: $FILES"
+
     TIME_STAMP=$(date +%F-%H-%M-%S)
+
     ZIP_FILE="$DEST_DIR/app-logs-$TIME_STAMP.zip"
+    
     echo "$FILES" | tr  ' ' '\n' | zip -@ "$ZIP_FILE" #this is used to create zip the files in dest-dir.
    #echo $FILES | zip -@ $ZIP_FILE #this faces error, when multiple files present. So, updated above command to trim the special characters and new line spaces.
     if [ -f $ZIP_FILE ] #check files are present or not
